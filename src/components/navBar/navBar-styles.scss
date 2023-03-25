@@ -1,0 +1,42 @@
+@import "../../theme";
+
+.navbar {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  width: 90%;
+  z-index: 1;
+
+  &-left {
+    color: $default-red;
+    font-family: "Medium";
+    font-size: 2em;
+  }
+
+  &-right {
+    display: flex;
+  }
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .navbar {
+    &-left {
+      font-size: 1em;
+    }
+  }
+}
+
+@media (min-width: $breakpoint-mobile) and (max-width: $breakpoint-tablet) {
+  .navbar {
+    &-left {
+      font-size: 1.5em;
+    }
+  }
+}
+
+@media (min-width: $breakpoint-tablet) {
+
+}

@@ -1,0 +1,95 @@
+@import "../../theme";
+
+.banner {
+  position: relative;
+  height: 75vh;
+  overflow: hidden;
+
+  .navbar-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &-background {
+    position: absolute;
+    top: 0;
+  }
+
+  &-image {
+    width: 100%;
+    object-fit: cover;
+    position: relative;
+    height: 100%;
+  }
+
+  &-text-container {
+    position: absolute;
+    margin-top: 14%;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+
+    .title-1 {
+      color: $white;
+      font-family: "Bold";
+      font-size: 3rem;
+      margin-bottom: 10px;
+      text-align: center;
+      word-wrap: break-word;
+    }
+
+    .title-2 {
+      color: $white;
+      font-family: "Regular";
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+      text-align: center;
+      word-wrap: break-word;
+    }
+
+    .title-3 {
+      color: $white;
+      font-family: "Medium";
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+      text-align: center;
+      word-wrap: break-word;
+    }
+  }
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .banner {
+    height: 31vh;
+
+    &-background {
+      height: 100%;
+    }
+
+    &-text-container {
+      margin-top: 5%;
+      .title-1 {
+        font-size: 1.25rem;
+      }
+
+      .title-2 {
+        font-size: 1rem;
+      }
+
+      .title-3 {
+        font-size: 0.8rem;
+      }
+    }
+  }
+}
+
+@media (min-width: $breakpoint-mobile) and (max-width: $breakpoint-tablet) {
+  .banner {
+    height: 42vh;
+  }
+}
+
+@media (min-width: $breakpoint-tablet) {
+}

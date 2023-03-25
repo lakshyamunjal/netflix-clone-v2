@@ -1,3 +1,38 @@
 {
-  "test": "English"
+  "sign-in": "Sign In",
+  "components": {
+    "mobile-download": {
+      "name": "Stranger things",
+      "downloading": "Downloading..."
+    }
+  },
+  "screen": {
+    "landing": {
+      "banner": {
+        "title-1": "Unlimited movies, TV shows and more",
+        "title-2": "Watch anywhere. Cancel anytime.",
+        "title-3": "Ready to watch? Enter your email to create or restart your membership.",
+        "email": "Email address",
+        "sign-up": "Get started"
+      },
+      "stories": {
+        "one": {
+          "title": "Enjoy on your TV.",
+          "subtitle": "Watch on smart TVs, PlayStation, Xbox, Chromecast, Apple TV, Blu-ray players and more."
+        },
+        "two": {
+          "title": "Download your shows to watch offline.",
+          "subtitle": "Save your favourites easily and always have something to watch."
+        },
+        "three": {
+          "title": "Watch everywhere.",
+          "subtitle": "Stream unlimited movies and TV shows on your phone, tablet, laptop, and TV."
+        },
+        "fourth": {
+          "title": "Create profiles for children.",
+          "subtitle": "Send children on adventures with their favourite characters in a space made just for them—free with your membership."
+        }
+      }
+    }
+  }
 }

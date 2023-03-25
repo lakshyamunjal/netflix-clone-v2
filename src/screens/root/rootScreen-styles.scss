@@ -1,0 +1,32 @@
+@import "../../theme";
+
+.home {
+  flex: 1;
+
+  .content {
+    margin-top: 15%;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+
+    .title-1 {
+      font-family: "Bold";
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .title-2 {
+      font-family: "Regular";
+      font-size: 1.25rem;
+      margin-bottom: 15px;
+    }
+
+    .title-3 {
+      font-family: "Medium";
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+  }
+}

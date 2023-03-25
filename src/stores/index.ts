@@ -3,7 +3,7 @@ import { Instance } from 'mobx-state-tree';
 
 import { rootStore } from './root-store';
 
-const RootStoreContext = createContext<null | Instance<typeof rootStore>>(null);
+const RootStoreContext = createContext<null | Instance<typeof rootStore>>(rootStore);
 
 export function useStores(){
   const store = useContext(RootStoreContext);

@@ -1,0 +1,62 @@
+@import "../../theme";
+
+.mobile-download-landing {
+  position: absolute;
+  display: flex;
+  background-color: $black;
+  padding: 8px;
+  border: 1px solid $gray-70;
+  border-radius: 8px;
+  width: 50%;
+  height: 12%;
+  left: 23%;
+  bottom: 7%;
+  z-index: 1;
+
+  .left {
+    flex: 1;
+    object-fit: contain;
+  }
+
+  .middle {
+    flex: 3;
+    margin-left: 10px;
+
+    .title {
+      font-family: "Bold";
+      color: $white;
+      font-size: 16px;
+    }
+
+    .sub-title {
+      color: $navy-blue;
+      font-size: 12px;
+    }
+  }
+
+  .right {
+    flex: 1;
+  }
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .mobile-download-landing {
+    .middle {
+      .title {
+      font-size: 8px;
+      }
+
+      .sub-title {
+        font-size: 6px;
+      }
+    }
+  }
+}
+
+@media (min-width: $breakpoint-mobile) and (max-width: $breakpoint-tablet) {
+  
+}
+
+@media (max-width: $breakpoint-tablet) {
+  
+}
