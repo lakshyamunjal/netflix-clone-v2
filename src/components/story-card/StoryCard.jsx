@@ -4,21 +4,24 @@ import "./storyCard-styles.scss";
 
 const StoryCard = (props) => {
   const {
+    isLastStory,
     title,
     subtitle,
     thumbnail,
     video,
     videoPosition,
-
     videoStyle,
     component,
   } = props;
   
   const shouldShowVideoRight = videoPosition === "RIGHT";
-  const containerClassName = `story-card ${
+  let containerClassName = `story-card ${
     shouldShowVideoRight ? "row" : "row-reverse"
   }`;
   const Component = component;
+  if (isLastStory) {
+    containerClassName += ' border-bottom';
+  }
 
   return (
     <div className={containerClassName}>

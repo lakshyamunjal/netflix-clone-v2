@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 
 import Banner from "../../components/banner/Banner";
 import StoryCard from "../../components/story-card/StoryCard";
+import Faqs from '../../components/faqs/Faqs';
 import STORY_CARD_DATA from "./constants";
 
 import "./rootScreen-styles.scss";
@@ -24,6 +25,7 @@ const HomeScreen = () => {
       return (
         <StoryCard
           key={index}
+          isLastStory={index === STORY_CARD_DATA.length - 1}
           title={t(titleKey)}
           subtitle={t(subtitleKey)}
           videoPosition={videoPosition}
@@ -40,7 +42,7 @@ const HomeScreen = () => {
     <div className="home">
       <Banner />
       {renderStories()}
-      {/* faqs */}
+      <Faqs />
       {/* help */}
     </div>
   );

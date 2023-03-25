@@ -8,6 +8,10 @@
   align-items: center;
   justify-content: space-between;
 
+  &.border-bottom {
+    border-bottom: 10px solid $nero;
+  }
+
   &.row {
     flex-direction: row;
   }

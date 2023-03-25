@@ -1,0 +1,31 @@
+@import "../../theme";
+
+.faqs {
+  padding: 50px 0;
+  background-color: $black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 10px solid $nero;
+  flex-direction: column;
+
+  .title {
+    color: $white;
+    font-family: Bold;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .accordion-container {
+    width: calc(100% - 20%);
+  }
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .faqs {
+    .title {
+      font-size: 1.5rem;
+    }
+  }
+}

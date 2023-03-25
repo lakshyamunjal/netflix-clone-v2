@@ -23,7 +23,6 @@ const Banner = () => {
       <div className="banner-text-container">
         <h1 className="title-1">{t(`${TRANSLATION_PREFIX}.title-1`)}</h1>
         <h3 className="title-2">{t(`${TRANSLATION_PREFIX}.title-2`)}</h3>
-        <div className="title-3">{t(`${TRANSLATION_PREFIX}.title-3`)}</div>
       </div>
     </div>
   );
