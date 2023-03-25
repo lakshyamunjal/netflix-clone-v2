@@ -1,6 +1,6 @@
 import React from "react";
 
-import Root from "./screens/root/RootScreen";
+import Routes from "./routes";
 
 import { StoreProvider } from "./stores";
 import { rootStore } from "./stores/root-store";
@@ -11,7 +11,7 @@ function App() {
   return (
     <StoreProvider value={rootStore}>
       <div className="app">
-        <Root />
+        <Routes />
       </div>
     </StoreProvider>
   );

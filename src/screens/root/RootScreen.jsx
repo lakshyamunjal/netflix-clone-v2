@@ -8,7 +8,7 @@ import STORY_CARD_DATA from "./constants";
 
 import "./rootScreen-styles.scss";
 
-const HomeScreen = () => {
+const RootScreen = () => {
   const { t } = useTranslation();
 
   const renderStories = () => {
@@ -48,4 +48,4 @@ const HomeScreen = () => {
   );
 };
 
-export default HomeScreen;
+export default RootScreen;
