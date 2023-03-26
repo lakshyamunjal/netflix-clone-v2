@@ -6,6 +6,8 @@ import StoryCard from "../../components/story-card/StoryCard";
 import NavBar from "../../components/navBar/NavBar";
 import Faqs from "../../components/faqs/Faqs";
 
+import useAuthentication from "../../custom-hooks/useAuthentication";
+
 import STORY_CARD_DATA from "./constants";
 
 import "./rootScreen-styles.scss";
@@ -14,6 +16,7 @@ const TRANSLATION_PREFIX = "screen.landing.banner";
 
 const RootScreen = () => {
   const { t } = useTranslation();
+  useAuthentication();
 
   const renderStories = () => {
     return STORY_CARD_DATA.map((item, index) => {

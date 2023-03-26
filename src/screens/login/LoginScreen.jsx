@@ -35,7 +35,13 @@ const LoginScreen = () => {
   };
 
   return (
-    <div className="login">
+    <form
+      autoComplete="off"
+      onSubmit={(e) => {
+        e.preventDefault();
+      }}
+      className="login"
+    >
       <NavBar />
       <div className="login-form-container">
         <div className="login-form">
@@ -79,7 +85,7 @@ const LoginScreen = () => {
         </div>
       </div>
       <Loader isLoaderActive={isLoaderActive} />
-    </div>
+    </form>
   );
 };
 

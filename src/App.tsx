@@ -26,7 +26,6 @@ function App() {
           theme="dark"
         />
         <Routes />
-
       </div>
     </StoreProvider>
   );

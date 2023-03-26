@@ -7,8 +7,10 @@ import { useHistory } from "react-router-dom";
 import { toast } from "react-toastify";
 
 import { auth } from "../firebase";
+import { setLocalStorage } from "../utils";
 
 import ROUTES from "../routes/constants";
+import { LOCAL_STORAGE_KEYS } from "../utils/constants";
 import { AUTH_ERROR_CODES } from "./constants";
 
 const useEmailLogin = (email: string, password: string) => {
@@ -53,7 +55,7 @@ const useEmailLogin = (email: string, password: string) => {
   const loginUser = async () => {
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      // localStorage.setItem('isUserLoggedIn', 'true');
+      setLocalStorage(LOCAL_STORAGE_KEYS.IS_LOGGED_IN, 'true');
       toast.success(t("auth.success.login"));
       history.push(ROUTES.HOME);
     } catch (error: any) {
@@ -64,7 +66,7 @@ const useEmailLogin = (email: string, password: string) => {
   async function createUser() {
     try {
       await createUserWithEmailAndPassword(auth, email, password);
-      // localStorage.setItem('isUserLoggedIn', 'true');
+      setLocalStorage(LOCAL_STORAGE_KEYS.IS_LOGGED_IN, 'true');
       toast.success(t("auth.success.signup"));
       history.push(ROUTES.HOME);
     } catch (error: any) {

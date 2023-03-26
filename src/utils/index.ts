@@ -16,4 +16,19 @@ const isValidPassword = (password: string) => {
   return password.length >= 6 && password.length <= 32;
 };
 
-export { handleLanguageChange, isDevelopment, isValidPassword, isValidEmail };
+const setLocalStorage = (key: string, value: string) => {
+  localStorage.setItem(key, value);
+};
+
+const getLocalStorage = (key: string) => {
+  return localStorage.getItem(key);
+};
+
+export {
+  handleLanguageChange,
+  isDevelopment,
+  isValidPassword,
+  isValidEmail,
+  setLocalStorage,
+  getLocalStorage,
+};

@@ -1,0 +1,5 @@
+const LOCAL_STORAGE_KEYS = {
+  IS_LOGGED_IN: 'IS_LOGGED_IN',
+};
+
+export { LOCAL_STORAGE_KEYS };
