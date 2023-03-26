@@ -1,0 +1,74 @@
+@import "../../theme";
+
+.login {
+  background-color: $black;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  
+  &-form-container {
+    width: 40%;
+    margin-top: 5%;
+    align-self: center;
+    
+    .login-form {
+      background-color: $white-10;
+      padding: 75px 120px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      overflow: hidden;
+
+      .heading {
+        margin-bottom: 30px;
+      }
+    }
+  }
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .login {
+    &-form-container {
+    width: 88%;
+    margin-top: 30%;
+      
+      .login-form {
+        padding: 25px 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        overflow: hidden;
+  
+        .heading {
+          margin-bottom: 20px;
+          font-size: 1.25rem;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: $breakpoint-mobile) and (max-width: $breakpoint-tablet) {
+  .login {
+    &-form-container {
+    width: 80%;
+    margin-top: 20%;
+      
+      .login-form {
+        padding: 40px 80px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        overflow: hidden;
+  
+        .heading {
+          margin-bottom: 30px;
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+}

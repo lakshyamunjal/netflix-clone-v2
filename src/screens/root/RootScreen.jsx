@@ -3,10 +3,14 @@ import { useTranslation } from "react-i18next";
 
 import Banner from "../../components/banner/Banner";
 import StoryCard from "../../components/story-card/StoryCard";
-import Faqs from '../../components/faqs/Faqs';
+import NavBar from "../../components/navBar/NavBar";
+import Faqs from "../../components/faqs/Faqs";
+
 import STORY_CARD_DATA from "./constants";
 
 import "./rootScreen-styles.scss";
+
+const TRANSLATION_PREFIX = "screen.landing.banner";
 
 const RootScreen = () => {
   const { t } = useTranslation();
@@ -40,10 +44,15 @@ const RootScreen = () => {
 
   return (
     <div className="home">
-      <Banner />
+      <Banner>
+        <NavBar showRightButton />
+        <div className="banner-text-container">
+          <h1 className="title-1">{t(`${TRANSLATION_PREFIX}.title-1`)}</h1>
+          <h3 className="title-2">{t(`${TRANSLATION_PREFIX}.title-2`)}</h3>
+        </div>
+      </Banner>
       {renderStories()}
       <Faqs />
-      {/* help */}
     </div>
   );
 };

@@ -1,9 +1,22 @@
 {
-  "sign-in": "Sign In",
+  "sign-in": "Get Started",
+  "something-went-wrong": "Something went wrong!",
   "components": {
     "mobile-download": {
       "name": "Stranger things",
       "downloading": "Downloading..."
+    }
+  },
+  "auth": {
+    "errors": {
+      "weak": "Please enter a strong password!",
+      "already-exists": "User already exists!",
+      "incorrect-password": "Incorrect password!",
+      "disabled": "User disabled!"
+    },
+    "success": {
+      "login": "Login successful!",
+      "signup": "Signup successful!"
     }
   },
   "screen": {
@@ -54,6 +67,16 @@
       "title": "Lost your way?",
       "subtitle": "Sorry, we can't find that page. You'll find lots to explore on the home page.",
       "btn": "Netflix Home"
+    },
+    "login": {
+      "heading": "Sign In/Sign up",
+      "email": "Email address",
+      "password": "Password",
+      "error": {
+        "email": "Please enter a valid email",
+        "password": "Password should be more than 8 characters and less then 32 characters"
+      },
+      "get-in": "Get in"
     }
   }
 }

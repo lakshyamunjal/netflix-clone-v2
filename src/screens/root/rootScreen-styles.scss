@@ -3,30 +3,56 @@
 .home {
   flex: 1;
 
-  .content {
-    margin-top: 15%;
+  .banner-text-container {
+    position: absolute;
+    margin-top: 14%;
     display: flex;
-    flex-direction: column;
-    flex: 1;
     align-items: center;
-    justify-content: center;
+    width: 100%;
+    flex-direction: column;
 
     .title-1 {
+      color: $white;
       font-family: "Bold";
-      font-size: 2rem;
+      font-size: 3rem;
       margin-bottom: 10px;
+      text-align: center;
+      word-wrap: break-word;
     }
 
     .title-2 {
+      color: $white;
       font-family: "Regular";
-      font-size: 1.25rem;
-      margin-bottom: 15px;
-    }
-
-    .title-3 {
-      font-family: "Medium";
       font-size: 1.5rem;
-      margin-bottom: 10px;
+      margin-bottom: 15px;
+      text-align: center;
+      word-wrap: break-word;
+    }
+  }
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .home {
+    .banner-text-container {
+      margin-top: 50%;
+      .title-1 {
+        font-size: 1.25rem;
+      }
+
+      .title-2 {
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+@media (min-width: $breakpoint-mobile) and (max-width: $breakpoint-tablet) {
+  .home {
+    .banner-text-container {
+      margin-top: 20%;
+      .title-1 {
+        font-size: 2rem;
+      }
     }
   }
 }

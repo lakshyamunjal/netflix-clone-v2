@@ -1,0 +1,13 @@
+@import "../../theme";
+
+.MuiFormControl-root {
+  .MuiInputBase-root {
+    border-radius: 6px;
+    background-color: $nero !important;
+    color: $white !important;
+  }
+
+  .MuiFormHelperText-contained {
+    margin-left: 0;
+  }
+}
