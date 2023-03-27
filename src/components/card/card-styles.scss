@@ -1,0 +1,32 @@
+@import "../../theme";
+
+.card {
+  max-width: 170px;
+  border-radius: 4px;
+  background-size: cover;
+  margin-right: 10px;
+
+  &.large-card {
+    max-width: 350px;
+  }
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .card {
+    max-width: 100px;
+
+    &.large-card {
+      max-width: 160px;
+    }
+  }
+}
+
+@media (min-width: $breakpoint-mobile) and (max-width: $breakpoint-tablet) {
+  .card {
+    max-width: 170px;
+
+    &.large-card {
+      max-width: 225px;
+    }
+  }
+}

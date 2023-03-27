@@ -5,6 +5,11 @@
   height: 100vh;
   width: 100vw;
   background-color: $white-10;
+  top: 0;
+
+  &.dark-background {
+    background-color: $black-25;
+  }
 
   .loader {
     position: absolute;
@@ -13,8 +18,8 @@
     margin: 0 0 0 -25px;
     width: 75px;
     height: 75px;
-  
   }
+
   .loader:after {
     content: "";
     background-image: url(https://assets.nflxext.com/en_us/pages/wiplayer/site-spinner.png);

@@ -1,5 +1,6 @@
 {
   "sign-in": "Get Started",
+  "sign-out": "Sign out",
   "something-went-wrong": "Something went wrong!",
   "components": {
     "mobile-download": {
@@ -77,6 +78,10 @@
         "password": "Password should be more than 8 characters and less then 32 characters"
       },
       "get-in": "Get in"
+    },
+    "home": {
+      "play": "Play",
+      "my-list": "My List"
     }
   }
 }

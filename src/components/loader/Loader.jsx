@@ -3,11 +3,15 @@ import React from "react";
 import "./loader-styles.scss";
 
 const Loader = (props) => {
-  const { isLoaderActive } = props;
-  
+  const { isLoaderActive, showDarkBackground = false } = props;
+
+  const className = `loader-background ${
+    showDarkBackground ? "dark-background" : ""
+  }`;
+
   return (
     isLoaderActive && (
-      <div className="loader-background">
+      <div className={className}>
         <div className="loader" />
       </div>
     )

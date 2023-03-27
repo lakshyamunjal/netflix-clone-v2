@@ -1,9 +1,8 @@
 import { createContext, useContext } from 'react';
-import { Instance } from 'mobx-state-tree';
 
 import { rootStore } from './root-store';
 
-const RootStoreContext = createContext<null | Instance<typeof rootStore>>(rootStore);
+const RootStoreContext = createContext(rootStore);
 
 export function useStores(){
   const store = useContext(RootStoreContext);

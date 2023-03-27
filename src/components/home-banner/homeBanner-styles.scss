@@ -1,0 +1,136 @@
+@import "../../theme";
+
+.home-banner {
+  height: 448px;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  &-content {
+    position: absolute;
+    margin-top: 7.5%;
+    margin-left: 5%;
+
+    &-movie-name {
+      font-family: Medium;
+      font-size: 48px;
+    }
+
+    &-buttons {
+      display: flex;
+      align-items: center;
+      margin-top: 25px;
+      margin-bottom: 40px;
+
+      &-left {
+        font-size: 24px;
+        border: none;
+        border-radius: 2px;
+        background-color: $black;
+        color: $white;
+        cursor: pointer;
+        padding: 10px 30px;
+        margin-right: 10px;
+
+        &:hover {
+          background-color: $gray-70;
+          transition: all 0.1s linear;
+        }
+      }
+
+      &-right {
+        font-size: 24px;
+        border: none;
+        border-radius: 2px;
+        background-color: $white;
+        color: $black;
+        cursor: pointer;
+        padding: 10px 30px;
+
+        &:hover {
+          background-color: $white-70;
+          transition: all 0.1s linear;
+        }
+      }
+    }
+
+    &-overview {
+      font-size: 28px;
+      width: 60%;
+    }
+  }
+
+  &-fade-bottom {
+    position: absolute;
+    height: 7rem;
+    width: 100%;
+    transform: translateY(-7rem);
+    background-image: linear-gradient(180deg, transparent, $nero-61, $black);
+  }
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .home-banner {
+    &-content {
+      margin-top: 10%;
+  
+      &-movie-name {
+        font-family: Medium;
+        font-size: 32px;
+      }
+  
+      &-buttons {
+        margin-top: 15px;
+        margin-bottom: 30px;
+  
+        &-left {
+          font-size: 12px;
+          padding: 10px 30px;
+        }
+  
+        &-right {
+          font-size: 12px;
+          padding: 10px 30px;
+        }
+      }
+  
+      &-overview {
+        font-size: 18px;
+        width: 80%;
+      }
+    }
+  }
+}
+
+@media (min-width: $breakpoint-mobile) and (max-width: $breakpoint-tablet) {
+  .home-banner {
+    &-content {
+      margin-top: 15%;
+  
+      &-movie-name {
+        font-family: Medium;
+        font-size: 36px;
+      }
+  
+      &-buttons {
+        margin-top: 15px;
+        margin-bottom: 30px;
+  
+        &-left {
+          font-size: 20px;
+          padding: 10px 30px;
+        }
+  
+        &-right {
+          font-size: 20px;
+          padding: 10px 30px;
+        }
+      }
+  
+      &-overview {
+        font-size: 22px;
+        width: 80%;
+      }
+    }
+  }
+}
