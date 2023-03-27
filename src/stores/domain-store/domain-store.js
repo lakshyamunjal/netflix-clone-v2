@@ -113,7 +113,8 @@ const domain = types
       } catch (error) {
         console.log("error :: ", error);
       } finally {
-        ui.handleLoader("home", false);
+        // set loader false after first image is rendered
+        // ui.handleLoader("home", false);
       }
     });
 
