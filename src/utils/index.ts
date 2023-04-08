@@ -1,4 +1,14 @@
 import i18next from "i18next";
+import decode from "jwt-decode";
+
+const isValidToken = (jwtToken: string) => {
+  let isValid = false;
+  try {
+    decode(jwtToken);
+    isValid = true;
+  } catch {}
+  return isValid;
+};
 
 const handleLanguageChange = async (language: string) => {
   i18next.changeLanguage(language);
@@ -21,14 +31,15 @@ const setLocalStorage = (key: string, value: string) => {
 };
 
 const getLocalStorage = (key: string) => {
-  return localStorage.getItem(key);
+  return localStorage.getItem(key) || '';
 };
 
 export {
+  getLocalStorage,
   handleLanguageChange,
   isDevelopment,
-  isValidPassword,
   isValidEmail,
+  isValidPassword,
+  isValidToken,
   setLocalStorage,
-  getLocalStorage,
 };

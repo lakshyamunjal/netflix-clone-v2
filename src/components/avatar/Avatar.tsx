@@ -36,7 +36,7 @@ const Avatar = () => {
         <button
           className="sign-out-button"
           onClick={() => {
-            setLocalStorage(LOCAL_STORAGE_KEYS.IS_LOGGED_IN, "false");
+            setLocalStorage(LOCAL_STORAGE_KEYS.JWT_TOKEN, "");
             history.push(ROUTES.ROOT);
           }}
         >

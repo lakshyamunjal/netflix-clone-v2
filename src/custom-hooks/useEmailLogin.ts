@@ -1,4 +1,5 @@
 import {
+  UserCredential,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
 } from "firebase/auth";
@@ -52,10 +53,15 @@ const useEmailLogin = (email: string, password: string) => {
     }
   };
 
+  const setJwtToken = async (userCredential: UserCredential) => {
+    const jwtToken = await userCredential.user.getIdToken();
+    setLocalStorage(LOCAL_STORAGE_KEYS.JWT_TOKEN, jwtToken);
+  }
+
   const loginUser = async () => {
     try {
-      await signInWithEmailAndPassword(auth, email, password);
-      setLocalStorage(LOCAL_STORAGE_KEYS.IS_LOGGED_IN, 'true');
+      const userCredential = await signInWithEmailAndPassword(auth, email, password);
+      setJwtToken(userCredential);
       toast.success(t("auth.success.login"));
       history.push(ROUTES.HOME);
     } catch (error: any) {
@@ -65,8 +71,8 @@ const useEmailLogin = (email: string, password: string) => {
 
   async function createUser() {
     try {
-      await createUserWithEmailAndPassword(auth, email, password);
-      setLocalStorage(LOCAL_STORAGE_KEYS.IS_LOGGED_IN, 'true');
+      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      setJwtToken(userCredential);
       toast.success(t("auth.success.signup"));
       history.push(ROUTES.HOME);
     } catch (error: any) {

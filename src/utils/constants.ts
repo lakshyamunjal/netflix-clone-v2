@@ -1,5 +1,5 @@
 const LOCAL_STORAGE_KEYS = {
-  IS_LOGGED_IN: 'IS_LOGGED_IN',
+  JWT_TOKEN: "JWT_TOKEN",
 };
 
 export { LOCAL_STORAGE_KEYS };

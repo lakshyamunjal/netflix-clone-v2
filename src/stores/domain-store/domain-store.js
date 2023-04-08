@@ -28,20 +28,22 @@ const domain = types
           const bannerIndex = Math.floor(Math.random() * results.length - 1);
           const bannerData = results[bannerIndex];
 
-          const {
-            backdrop_path = "",
-            name = "",
-            overview = "",
-            poster_path = "",
-            title = "",
-            original_name = "",
-          } = bannerData;
-          self.home.banner = {
-            backdropPath: `${TMDB_IMAGE_PATH}/${backdrop_path}`,
-            name: name || original_name || title,
-            overview,
-            posterPath: `${TMDB_IMAGE_PATH}/${poster_path}`,
-          };
+          if (bannerData) {
+            const {
+              backdrop_path = "",
+              name = "",
+              overview = "",
+              poster_path = "",
+              title = "",
+              original_name = "",
+            } = bannerData;
+            self.home.banner = {
+              backdropPath: `${TMDB_IMAGE_PATH}/${backdrop_path}`,
+              name: name || original_name || title,
+              overview,
+              posterPath: `${TMDB_IMAGE_PATH}/${poster_path}`,
+            };
+          }
         }
       } catch (err) {
         console.log("Banner error :: ", err);
