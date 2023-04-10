@@ -61,6 +61,7 @@ const useEmailLogin = (email: string, password: string) => {
   const loginUser = async () => {
     try {
       const userCredential = await signInWithEmailAndPassword(auth, email, password);
+      setLocalStorage(LOCAL_STORAGE_KEYS.EMAIL, email);
       setJwtToken(userCredential);
       toast.success(t("auth.success.login"));
       history.push(ROUTES.HOME);

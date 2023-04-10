@@ -12,14 +12,14 @@
 }
 
 .avatar-popup {
-  margin-top: 15px;
+  margin-top: 20px;
   position: absolute;
   right: 5.75%;
   width: 100px;
   border-radius: 6px;
   transition: all 0.15s linear;
 
-  .sign-out-button {
+  &-button {
     border: none;
     width: 100%;
     padding-top: 10px;
@@ -35,6 +35,6 @@
     right: 10%;
     border-width: 5px;
     border-style: solid;
-    border-color: transparent transparent $white transparent;
+    border-color: transparent transparent $night-rider transparent;
   }
 }

@@ -9,17 +9,27 @@ import ROUTES from "../../routes/constants";
 import "./navBar-styles.scss";
 
 const NavBar = (props) => {
-  const { showRightButton, rightComponent = null } = props;
+  const {
+    rightComponent = null,
+    showProfileOption = true,
+    showRightButton,
+  } = props;
 
   const { t } = useTranslation();
   const history = useHistory();
 
   const RightComponent = rightComponent;
 
+  const handleLogoClick = () => {
+    history.push(ROUTES.HOME);
+  };
+
   return (
     <div className="navbar-container">
       <header className="navbar">
-        <div className="navbar-left">Netflix</div>
+        <div className="navbar-left" onClick={handleLogoClick}>
+          Netflix
+        </div>
         <div className="navbar-right">
           {showRightButton && (
             <Button
@@ -30,7 +40,9 @@ const NavBar = (props) => {
               }}
             />
           )}
-          {RightComponent && <RightComponent />}
+          {RightComponent && (
+            <RightComponent showProfileOption={showProfileOption} />
+          )}
         </div>
       </header>
     </div>

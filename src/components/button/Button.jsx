@@ -4,17 +4,23 @@ import "./button-styles.scss";
 
 const Button = (props) => {
   const {
-    text,
-    onClick,
     buttonStyle = {},
+    isDisabled = false,
     leftIcon = null,
-    rightIcon = null,
     leftIconStyle = {},
+    onClick,
+    rightIcon = null,
     rightIconStyle = {},
+    text,
   } = props;
 
   return (
-    <button className="button" style={buttonStyle} onClick={onClick}>
+    <button
+      className={`button ${isDisabled ? "disabled" : ""}`}
+      disabled={isDisabled}
+      onClick={onClick}
+      style={buttonStyle}
+    >
       {!!leftIcon && <span style={leftIconStyle}>{leftIcon}</span>}
       {text}
       {!!rightIcon && <span style={rightIconStyle}>{rightIcon}</span>}

@@ -3,6 +3,7 @@ const ROUTES = {
   ERROR: "*",
   LOGIN: '/login',
   HOME: '/home',
+  PROFILE: '/profile',
 };
 
 export default ROUTES;

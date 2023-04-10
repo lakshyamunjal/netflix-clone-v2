@@ -1,0 +1,144 @@
+@import "../../theme";
+
+.plans {
+  padding: 5px;
+
+  &-heading {
+    margin: 10px 0 20px 0;
+  }
+
+  &-item-container {
+    display: flex;
+    align-items: stretch;
+    min-height: 50px;
+    background-color: $white;
+    cursor: pointer;
+    margin-bottom: 2%;
+    border: 5px solid $silver;
+
+    .plans-item-left {
+      flex: 1;
+      min-height: inherit;
+      align-items: center;
+      align-content: stretch;
+      justify-content: center;
+      display: flex;
+      flex-direction: column;
+      border-right: 1px solid $silver;
+      text-align: center;
+
+      .plans-item-top {
+        &.current-plan {
+          font-size: 13px;
+        }
+      }
+
+      .plans-item-bottom {
+        &.selected-plan-text {
+          color: $azure-radiance;
+        }
+      }
+
+      &.left-selected {
+        background-color: $silver;
+      }
+
+      > div {
+        color: $black;
+        font-size: 14px;
+        font-family: Medium;
+      }
+    }
+
+    .plans-item-middle {
+      flex: 5;
+      padding: 20px 30px;
+      display: flex;
+      align-items: center;
+      min-height: inherit;
+      color: $black;
+    }
+
+    .plans-item-right {
+      flex: 1;
+      padding: 20px 30px;
+      color: $black;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &.selected {
+      border-color: $azure-radiance;
+    }
+
+    &:hover {
+      border-color: $azure-radiance;
+    }
+  }
+
+  &-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .plans {
+    &-heading {
+      font-size: 24px;
+    }
+
+    &-item-container {
+      margin-bottom: 5%;
+      border: 2px solid $silver;
+      flex-direction: column;
+      
+      .plans-item-left {
+        min-height: inherit;
+        flex-direction: column;
+        border-bottom: 1px solid $silver;
+        padding: 10px 0;
+
+        .plans-item-top {
+          &.current-plan {
+            font-size: 15px;
+          }
+        }
+
+        > div {
+          font-size: 15px;
+          font-family: Medium;
+        }
+      }
+
+      .plans-item-middle {
+        padding: 10px 0;
+        text-align: center;
+      }
+
+      .plans-item-right {
+        padding: 10px 0;
+        font-family: Medium;
+      }
+    }
+  }
+}
+
+@media (min-width: $breakpoint-mobile) and (max-width: $breakpoint-tablet) {
+  .plans {
+    &-item-container {
+      .plans-item-middle {
+        flex: 3;
+      }
+
+      .plans-item-right {
+        flex: 1;
+        font-family: Medium;
+      }
+    }
+  }
+}

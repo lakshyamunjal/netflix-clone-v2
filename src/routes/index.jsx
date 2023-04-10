@@ -8,6 +8,7 @@ import {
 import ErrorScreen from "../screens/error/ErrorScreen";
 import HomeScreen from "../screens/home/HomeScreen";
 import LoginScreen from "../screens/login/LoginScreen";
+import ProfileScreen from "../screens/profile/ProfileScreen";
 import RootScreen from "../screens/root/RootScreen";
 
 import { getLocalStorage, isValidToken } from "../utils";
@@ -50,6 +51,7 @@ const Routes = () => {
       <Switch>
         <Route path={ROUTES.ROOT} component={RootScreen} exact />
         <Route path={ROUTES.LOGIN} component={LoginScreen} />
+        <PrivateRoute path={ROUTES.PROFILE} component={ProfileScreen} />
         <PrivateRoute path={ROUTES.HOME} component={HomeScreen} />
         <Route path={ROUTES.ERROR} component={ErrorScreen} />
       </Switch>

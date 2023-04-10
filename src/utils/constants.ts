@@ -1,5 +1,6 @@
 const LOCAL_STORAGE_KEYS = {
   JWT_TOKEN: "JWT_TOKEN",
+  EMAIL: "EMAIL",
 };
 
 export { LOCAL_STORAGE_KEYS };
