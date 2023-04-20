@@ -6,10 +6,18 @@ import Routes from "./routes";
 import { StoreProvider } from "./stores";
 import { rootStore } from "./stores/root-store";
 
-import 'react-toastify/dist/ReactToastify.css';
+import "react-toastify/dist/ReactToastify.css";
 import "./App.scss";
-  
+import { loadStripe } from "@stripe/stripe-js";
+import { PUBLIC_KEY, SECRET_KEY } from "./stripe";
+
+const STRIPE_PROMISE = loadStripe(PUBLIC_KEY);
+
 function App() {
+  const options = {
+    clientSecret: SECRET_KEY,
+  };
+
   return (
     <StoreProvider value={rootStore}>
       <div className="app">
