@@ -1,5 +1,9 @@
 @import "../../theme";
 
+.MuiModal-backdrop {
+  background-color: transparent !important; // override default modal background
+}
+
 .avatar {
   cursor: pointer;
   background-image: url("../../assets/images/avatar.png");
@@ -12,12 +16,12 @@
 }
 
 .avatar-popup {
-  margin-top: 20px;
   position: absolute;
   right: 5.75%;
   width: 100px;
   border-radius: 6px;
   transition: all 0.15s linear;
+  outline: none;
 
   &-button {
     border: none;
