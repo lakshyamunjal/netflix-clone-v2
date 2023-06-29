@@ -19,7 +19,7 @@ const isDevelopment = () => {
 };
 
 const isValidEmail = (email: string) => {
-  return RegExp(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/).test(email);
+  return RegExp(/^[\w-\\.]+@([\w-]+\.)+[\w-]{2,4}$/).test(email);
 };
 
 const isValidPassword = (password: string) => {
@@ -31,7 +31,7 @@ const setLocalStorage = (key: string, value: string) => {
 };
 
 const getLocalStorage = (key: string) => {
-  return localStorage.getItem(key) || '';
+  return localStorage.getItem(key) || "";
 };
 
 export {

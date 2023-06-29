@@ -13,6 +13,7 @@ const useAuthentication = () => {
     const token = getLocalStorage(LOCAL_STORAGE_KEYS.JWT_TOKEN);
     const isUserAuthenticated = isValidToken(token);
     if (isUserAuthenticated) history.push(ROUTES.HOME);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 };
 
