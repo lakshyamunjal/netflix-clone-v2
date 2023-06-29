@@ -24,12 +24,20 @@ const HomeScreen = () => {
   useEffect(() => {
     domain.getBannerDetails();
     domain.getHomeScreenData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const renderCategories = () => {
     return categories?.map((item, index) => {
       const { name, list } = item;
-      return <ContentRow key={name} title={name} list={list} isLargeRow={index === 0} />;
+      return (
+        <ContentRow
+          key={name}
+          title={name}
+          list={list}
+          isLargeRow={index === 0}
+        />
+      );
     });
   };
 
