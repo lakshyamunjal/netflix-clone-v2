@@ -13,14 +13,14 @@ const StoryCard = (props) => {
     videoStyle,
     component,
   } = props;
-  
+
   const shouldShowVideoRight = videoPosition === "RIGHT";
   let containerClassName = `story-card ${
     shouldShowVideoRight ? "row" : "row-reverse"
   }`;
   const Component = component;
   if (isLastStory) {
-    containerClassName += ' border-bottom';
+    containerClassName += " border-bottom";
   }
 
   return (
@@ -35,10 +35,7 @@ const StoryCard = (props) => {
           marginLeft: shouldShowVideoRight ? "50px" : "",
         }}
       >
-        <img
-          src={thumbnail}
-          className="image"
-        />
+        <img src={thumbnail} className="image" alt="thumbnail" />
         {!!video && (
           <video
             src={video}
