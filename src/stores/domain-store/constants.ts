@@ -11,6 +11,8 @@ const Category = types.model("category", {
   name: types.maybeNull(types.string),
   list: types.maybeNull(types.array(Item)),
   page: types.maybeNull(types.number),
+  type: types.optional(types.string, ""),
+  hasMoreData: types.optional(types.boolean, true),
 });
 
 const HomeModel = types.model({
