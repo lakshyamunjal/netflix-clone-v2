@@ -3,6 +3,7 @@ This is a Netflix clone built using React JS as front-end and Firebase as back-e
 Features:
 - Sign in and sign up with Firebase Authentication
 - Browse movies and TV shows
+- CI/CD using Github actions to deploy to Firebase
 
 Technology Used:
 - React JS

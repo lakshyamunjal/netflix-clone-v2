@@ -29,13 +29,15 @@ const HomeScreen = () => {
 
   const renderCategories = () => {
     return categories?.map((item, index) => {
-      const { name, list } = item;
+      const { name, list, type } = item;
       return (
         <ContentRow
           key={name}
           title={name}
           list={list}
           isLargeRow={index === 0}
+          type={type}
+          loadMore={domain.getCategoryPaginatedData}
         />
       );
     });

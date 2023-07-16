@@ -1,26 +1,56 @@
-import React from "react";
+import React, { useCallback, useRef } from "react";
+import { observer } from "mobx-react-lite";
 
 import Card from "../card/Card";
 
 import "./contentRow-styles.scss";
 
 const ContentRow = (props) => {
-  const { title, list = [], isLargeRow = false } = props;
+  const { title, list = [], isLargeRow = false, type, loadMore } = props;
+
+  const observerRef = useRef();
+
+  const lastCardCallback = useCallback((node) => {
+    if (node) {
+      observerRef.current?.disconnect();
+      observerRef.current = new IntersectionObserver(
+        (entries) => {
+          if (entries[0].isIntersecting) {
+            loadMore(type);
+          }
+        },
+        {
+          threshold: 0.75,
+        }
+      );
+      observerRef.current.observe(node);
+    }
+  }, []);
 
   const renderCards = () => {
-    return list.map((item) => {
+    return list?.map((item, index) => {
       const { backdropPath, posterPath } = item;
+
       let url = "";
-      if (!posterPath.includes("null")) {
+      if (!posterPath?.includes("null")) {
         url = posterPath;
-      } else if (!backdropPath.includes("null")) {
+      } else if (!backdropPath?.includes("null")) {
         url = backdropPath;
       }
       if (isLargeRow) {
         url = backdropPath;
       }
 
-      return !!url && <Card key={url} imageUrl={url} isLarge={isLargeRow} />;
+      return (
+        !!url && (
+          <span
+            key={`${url}-${index}`}
+            ref={index === list.length - 1 ? lastCardCallback : null}
+          >
+            <Card imageUrl={url} isLarge={isLargeRow} />
+          </span>
+        )
+      );
     });
   };
 
@@ -32,4 +62,4 @@ const ContentRow = (props) => {
   );
 };
 
-export default ContentRow;
+export default observer(ContentRow);
