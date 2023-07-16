@@ -90,8 +90,8 @@ const domain = types
           const [genreName, code] = item;
           return { name: genreName, code };
         });
-        const genrePromiseList = genreNameAndCodeList.map(({ code }) => {
-          return getMovieWithGenre(code);
+        const genrePromiseList = genreNameAndCodeList.map(({ code, name }) => {
+          return getMovieWithGenre(code, name.toLowerCase());
         });
 
         const resultList = yield Promise.all([
@@ -102,12 +102,13 @@ const domain = types
 
         if (resultList?.length) {
           const formattedData = resultList.map((item, idx) => {
-            const { page, results } = item;
+            const { page, results, type } = item;
             const formattedData = formatCategoryData(results);
             return {
               name: DATA_ORDER[idx],
               list: formattedData,
-              page: page,
+              page,
+              type,
             };
           });
           self.home.categories = formattedData;
@@ -120,7 +121,46 @@ const domain = types
       }
     });
 
-    return { getHomeScreenData, getBannerDetails };
+    const getCategoryPaginatedData = flow(function* (category) {
+      const index = self.home.categories.findIndex(
+        ({ type }) => type === category
+      );
+      let categoryData = JSON.parse(
+        JSON.stringify(self.home.categories[index])
+      );
+
+      if (index !== -1 && categoryData) {
+        const options = { page: categoryData.page + 1 };
+        let data,
+          formattedData = [];
+
+        if (categoryData.type === "top_rated") {
+          data = yield getTopRated(options);
+          formattedData = formatCategoryData(data.results);
+        } else if (categoryData.type === "trending") {
+          data = yield getTrending(options);
+          formattedData = formatCategoryData(data.results);
+        } else {
+          data = yield getMovieWithGenre(
+            GENRE_CODE[categoryData.name.toUpperCase()],
+            categoryData.name.toLowerCase(),
+            options
+          );
+          formattedData = formatCategoryData(data.results);
+        }
+
+        categoryData = {
+          ...categoryData,
+          page: data.page,
+          list: [...categoryData.list, ...formattedData],
+        };
+
+        self.home.categories[index].page = categoryData.page;
+        self.home.categories[index].list = categoryData.list;
+      }
+    });
+
+    return { getHomeScreenData, getBannerDetails, getCategoryPaginatedData };
   });
 
 export default domain;
