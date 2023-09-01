@@ -25,6 +25,7 @@ const ContentRow = (props) => {
       );
       observerRef.current.observe(node);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const renderCards = () => {

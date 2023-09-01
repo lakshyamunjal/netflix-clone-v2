@@ -1,32 +1,38 @@
 @import "../../theme";
 
 .card {
-  max-width: 170px;
+  width: 170px;
   border-radius: 4px;
   background-size: cover;
-  margin-right: 10px;
+  margin-right: 8px;
+  height: 255px;
 
   &.large-card {
-    max-width: 350px;
+    width: 350px;
+    height: 196px;
   }
 }
 
 @media (max-width: $breakpoint-mobile) {
   .card {
-    max-width: 100px;
+    width: 85px;
+    height: 134px;
 
     &.large-card {
-      max-width: 160px;
+      width: 180px;
+      height: 110px;
     }
   }
 }
 
 @media (min-width: $breakpoint-mobile) and (max-width: $breakpoint-tablet) {
   .card {
-    max-width: 170px;
+    width: 130px;
+    height: 196px;
 
     &.large-card {
-      max-width: 225px;
+      width: 260px;
+      height: 160px;
     }
   }
 }
