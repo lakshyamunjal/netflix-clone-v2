@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
+
 import Accordion from "../accordion/Accordion";
 
 import FAQS, { TRANSLATION_PREFIX } from "./constants";
